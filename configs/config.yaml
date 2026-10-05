@@ -1,0 +1,67 @@
+# Central configuration. Paths are relative to the project root unless absolute.
+# Override raw_dir if your CSVs live somewhere else.
+
+seed: 42
+
+paths:
+  # Where the Home Credit CSVs live. See data/README.md.
+  raw_dir: /mnt/user-data/uploads
+  processed_dir: data/processed
+  models_dir: models
+  reports_dir: reports
+  figures_dir: reports/figures
+  tables_dir: reports/tables
+  mlruns_dir: mlruns
+
+data:
+  target: TARGET
+  id_col: SK_ID_CURR
+  # Files expected in raw_dir.
+  files:
+    application_train: application_train.csv
+    application_test: application_test.csv
+    bureau: bureau.csv
+    bureau_balance: bureau_balance.csv
+    previous_application: previous_application.csv
+    pos_cash: POS_CASH_balance.csv
+    credit_card: credit_card_balance.csv
+    # installments_payments is part of the full Home Credit release but was not
+    # available in this environment. Code degrades gracefully if it is missing.
+    installments: installments_payments.csv
+
+validation:
+  test_size: 0.20
+  n_splits: 5
+
+# Chunk size used when aggregating the large relational tables so we stay
+# inside a small memory budget (this box has ~4 GB RAM).
+feature_engineering:
+  chunksize: 2000000
+
+# Subsampling used ONLY for the compute-heavy steps (Optuna, SHAP) so the
+# pipeline finishes in a constrained environment. The main model comparison
+# uses the full training split. All subsampling is documented in the report.
+compute_budget:
+  # Optuna runs single-threaded on one core here, so the search is deliberately
+  # modest: a 60k-row stratified subsample with 3-fold CV and 15 trials per model.
+  # This is enough to move off the defaults without an overnight run.
+  optuna_sample_rows: 60000
+  optuna_trials: 15
+  shap_sample_rows: 4000
+  # The linear baseline densifies the one-hot matrix; on a 4 GB box we fit it
+  # on a stratified subsample of the training rows. Tree models use all rows.
+  logreg_max_rows: 150000
+
+# Simple, explicit cost framework for threshold selection (Phase 11).
+# These are illustrative business costs, not Credit Saison figures.
+cost_framework:
+  # Cost of approving a loan that defaults (money lost).
+  cost_false_negative: 5.0
+  # Cost of rejecting a loan that would have repaid (opportunity/margin lost).
+  cost_false_positive: 1.0
+
+risk_bands:
+  # Derived in Phase 11 from the cost analysis; defaults here are placeholders
+  # that the threshold script overwrites in reports/tables/risk_bands.json.
+  approve_below: 0.10
+  reject_above: 0.30

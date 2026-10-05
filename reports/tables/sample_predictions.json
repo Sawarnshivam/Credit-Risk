@@ -1,0 +1,102 @@
+[
+  {
+    "applicant_id": 116731,
+    "probability_of_default": 0.1001,
+    "risk_category": "LOW",
+    "decision": "APPROVE",
+    "top_risk_increasing": [
+      "CODE_GENDER (+0.178)",
+      "CREDIT_GOODS_RATIO (+0.173)",
+      "BURO_AMT_CREDIT_SUM_DEBT_MEAN (+0.120)",
+      "DEF_60_CNT_SOCIAL_CIRCLE (+0.090)",
+      "BURO_DAYS_CREDIT_MAX (+0.086)"
+    ],
+    "top_risk_reducing": [
+      "NAME_EDUCATION_TYPE (-0.129)",
+      "PREV_AMT_ANNUITY_MEAN (-0.107)",
+      "PREV_AMT_DOWN_PAYMENT_SUM (-0.050)",
+      "CREDIT_ANNUITY_RATIO (-0.049)",
+      "POS_MONTHS_BALANCE_STD (-0.037)"
+    ]
+  },
+  {
+    "applicant_id": 209765,
+    "probability_of_default": 0.0541,
+    "risk_category": "LOW",
+    "decision": "APPROVE",
+    "top_risk_increasing": [
+      "ANNUITY_INCOME_RATIO (+0.096)",
+      "NAME_FAMILY_STATUS (+0.083)",
+      "EXT_SOURCE_MAX (+0.074)",
+      "AMT_GOODS_PRICE (+0.068)",
+      "FLAG_WORK_PHONE (+0.067)"
+    ],
+    "top_risk_reducing": [
+      "NAME_EDUCATION_TYPE (-0.193)",
+      "CREDIT_GOODS_RATIO (-0.130)",
+      "EXT_SOURCE_1 (-0.112)",
+      "CODE_GENDER (-0.084)",
+      "CREDIT_ANNUITY_RATIO (-0.061)"
+    ]
+  },
+  {
+    "applicant_id": 131190,
+    "probability_of_default": 0.1344,
+    "risk_category": "LOW",
+    "decision": "APPROVE",
+    "top_risk_increasing": [
+      "EXT_SOURCE_MEAN (+0.778)",
+      "CREDIT_GOODS_RATIO (+0.150)",
+      "CREDIT_ANNUITY_RATIO (+0.119)",
+      "EXT_SOURCE_1 (+0.084)",
+      "DAYS_EMPLOYED (+0.081)"
+    ],
+    "top_risk_reducing": [
+      "AMT_ANNUITY (-0.156)",
+      "CODE_GENDER (-0.096)",
+      "DAYS_ID_PUBLISH (-0.087)",
+      "PREV_AMT_DOWN_PAYMENT_MAX (-0.046)",
+      "POS_MONTHS_BALANCE_STD (-0.041)"
+    ]
+  },
+  {
+    "applicant_id": 218332,
+    "probability_of_default": 0.2402,
+    "risk_category": "HIGH",
+    "decision": "REJECT",
+    "top_risk_increasing": [
+      "EXT_SOURCE_MEAN (+0.960)",
+      "CC_UTILISATION_MEAN (+0.219)",
+      "EXT_SOURCE_3 (+0.178)",
+      "EXT_SOURCE_MIN (+0.147)",
+      "EXT_SOURCE_PROD (+0.108)"
+    ],
+    "top_risk_reducing": [
+      "AMT_ANNUITY (-0.110)",
+      "DAYS_EMPLOYED (-0.107)",
+      "CREDIT_GOODS_RATIO (-0.094)",
+      "CODE_GENDER (-0.085)",
+      "BURO_DAYS_CREDIT_ENDDATE_MAX (-0.059)"
+    ]
+  },
+  {
+    "applicant_id": 425755,
+    "probability_of_default": 0.261,
+    "risk_category": "HIGH",
+    "decision": "REJECT",
+    "top_risk_increasing": [
+      "EXT_SOURCE_MEAN (+0.944)",
+      "EXT_SOURCE_3 (+0.139)",
+      "AMT_ANNUITY (+0.103)",
+      "BURO_AMT_CREDIT_SUM_DEBT_MEAN (+0.102)",
+      "EXT_SOURCE_PROD (+0.098)"
+    ],
+    "top_risk_reducing": [
+      "OWN_CAR_AGE (-0.191)",
+      "POS_MONTHS_BALANCE_STD (-0.108)",
+      "CREDIT_GOODS_RATIO (-0.101)",
+      "FLAG_DOCUMENT_3 (-0.073)",
+      "ANNUITY_INCOME_RATIO (-0.059)"
+    ]
+  }
+]

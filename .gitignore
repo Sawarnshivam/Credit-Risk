@@ -1,0 +1,20 @@
+# raw data (download separately - see data/README.md)
+data/raw/*.csv
+
+# generated feature matrices (rebuild with `python main.py features`)
+data/processed/*.parquet
+data/processed/*.npz
+
+# trained models and tuning studies
+models/*.joblib
+reports/tables/optuna_*.db
+
+# MLflow tracking store
+mlruns/
+mlflow.db
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/

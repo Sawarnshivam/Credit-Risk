@@ -1,0 +1,8 @@
+{
+  "n_train_rows": 307511,
+  "n_test_rows": 48744,
+  "n_application_features": 135,
+  "n_total_features": 375,
+  "target_positive_rate": 0.08072881945686496,
+  "seconds": 69.8
+}
